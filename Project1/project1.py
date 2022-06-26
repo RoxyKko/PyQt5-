@@ -9,6 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QDesktopWidget          #导入屏幕类
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QBrush,QPixmap
 
 
 class Ui_test(object):
@@ -42,6 +45,23 @@ class Ui_test(object):
         self.menu.addAction(self.actionLoad)
         self.menubar.addAction(self.menu.menuAction())
 
+        icon = QtGui.QIcon()  # 改变图标
+        # icon.addPixmap(QtGui.QPixmap(r"D:\allProject\PyQt5_Project\Project1\7F263D99B929E0B4D25F25B314F1EC0F.jpg"),QtGui.QIcon.Normal,QtGui.QIcon.Off)     #使用了绝对路径
+        icon.addPixmap(QtGui.QPixmap(r"7F263D99B929E0B4D25F25B314F1EC0F.jpg"), QtGui.QIcon.Normal,
+                       QtGui.QIcon.Off)  # 放在同级目录可以这样简写
+        mainwindow.setWindowIcon(icon)
+
+        # mainwindow.setStyleSheet("#Test{background-color:blue}")        #指定为背景图片，#Test：#号后跟想要设置的窗口ObjectName即窗口对象名称
+        mainwindow.setStyleSheet(
+            "#test{border-image:url(1.jpg)}")  # 使用绝对路径要用斜杠而不是反斜杠（D:/allProject/PyQt5_Project/Project1/borderImage.jpg）
+
+        # 另一种办法设置窗口背景图片、颜色
+        palette = QtGui.QPalette()
+        # palette.setColor(QtGui.QPalette.Background , Qt.red)
+        # palette.setBrush(QtGui.QPalette.Background,QBrush(QPixmap("./borderImage.jpg")))        #这样有时候会只显示图片的一部分
+        # palette.setBrush(mainwindow.backgroundRole(), QBrush(QPixmap("./borderImage.jpg")
+        #     .scaled(mainwindow.size(),Qt.IgnoreAspectRatio,Qt.SmoothTransformation)))  # 图片缩放显示
+        # mainwindow.setPalette(palette)
         self.retranslateUi(test)
         QtCore.QMetaObject.connectSlotsByName(test)
 
@@ -52,4 +72,15 @@ class Ui_test(object):
         self.menu.setTitle(_translate("test", "菜单"))
         self.actionNew.setText(_translate("test", "New"))
         self.actionLoad.setText(_translate("test", "Load"))
+        mainwindow.setWindowTitle("smjb")
 import img_rc
+if __name__=="__main__":
+    import sys
+
+    app=QtWidgets.QApplication(sys.argv)
+    mainwindow=QtWidgets.QMainWindow()
+    ui=Ui_test()
+
+    ui.setupUi(mainwindow)
+    mainwindow.show()
+    sys.exit(app.exec_())
