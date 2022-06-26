@@ -42,7 +42,9 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menu.menuAction())
 
         icon=QtGui.QIcon()                                  #改变图标
-        icon.addPixmap(QtGui.QPixmap(r"D:\allProject\PyQt5_Project\Project1\7F263D99B929E0B4D25F25B314F1EC0F.jpg"),QtGui.QIcon.Normal,QtGui.QIcon.Off)
+        #icon.addPixmap(QtGui.QPixmap(r"D:\allProject\PyQt5_Project\Project1\7F263D99B929E0B4D25F25B314F1EC0F.jpg"),QtGui.QIcon.Normal,QtGui.QIcon.Off)     #使用了绝对路径
+        icon.addPixmap(QtGui.QPixmap(r"7F263D99B929E0B4D25F25B314F1EC0F.jpg"),
+                       QtGui.QIcon.Normal, QtGui.QIcon.Off)         #放在同级目录可以这样简写
         mainwindow.setWindowIcon(icon)
 
         self.retranslateUi(MainWindow)
