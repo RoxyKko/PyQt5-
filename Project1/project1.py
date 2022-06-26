@@ -10,6 +10,8 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QDesktopWidget          #导入屏幕类
+from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QBrush,QPixmap
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -47,7 +49,14 @@ class Ui_MainWindow(object):
                        QtGui.QIcon.Normal, QtGui.QIcon.Off)         #放在同级目录可以这样简写
         mainwindow.setWindowIcon(icon)
         #mainwindow.setStyleSheet("#Test{background-color:blue}")        #指定为背景图片，#Test：#号后跟想要设置的窗口ObjectName即窗口对象名称
-        mainwindow.setStyleSheet("#Test{border-image:url(borderImage.jpg)}")        #使用绝对路径要用斜杠而不是反斜杠（D:/allProject/PyQt5_Project/Project1/borderImage.jpg）
+        # mainwindow.setStyleSheet("#Test{border-image:url(borderImage.jpg)}")        #使用绝对路径要用斜杠而不是反斜杠（D:/allProject/PyQt5_Project/Project1/borderImage.jpg）
+
+        #另一种办法设置窗口背景图片、颜色
+        palette=QtGui.QPalette()
+        # palette.setColor(QtGui.QPalette.Background , Qt.red)
+        # palette.setBrush(QtGui.QPalette.Background,QBrush(QPixmap("./borderImage.jpg")))        #这样有时候会只显示图片的一部分
+        palette.setBrush(QtGui.QPalette.Background, QBrush(QPixmap("./borderImage.jpg").scaled(mainwindow.size(),QtCore.Qt.IgnoreAspectRatio,QtCore.Qt.SmoothTransformation)))  # 图片缩放显示
+        mainwindow.setPalette(palette)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
