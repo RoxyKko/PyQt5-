@@ -46,7 +46,8 @@ class Ui_MainWindow(object):
         icon.addPixmap(QtGui.QPixmap(r"7F263D99B929E0B4D25F25B314F1EC0F.jpg"),
                        QtGui.QIcon.Normal, QtGui.QIcon.Off)         #放在同级目录可以这样简写
         mainwindow.setWindowIcon(icon)
-        mainwindow.setStyleSheet("#Test{background-color:blue}")        #指定为背景图片，#Test：#号后跟想要设置的窗口ObjectName即窗口对象名称
+        #mainwindow.setStyleSheet("#Test{background-color:blue}")        #指定为背景图片，#Test：#号后跟想要设置的窗口ObjectName即窗口对象名称
+        mainwindow.setStyleSheet("#Test{border-image:url(borderImage.jpg)}")        #使用绝对路径要用斜杠而不是反斜杠（D:/allProject/PyQt5_Project/Project1/borderImage.jpg）
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -72,3 +73,5 @@ if __name__=="__main__":
     #改变窗口大小 2022年6月26日20:58:02
     #获取屏幕大小 2022年6月26日21:06:21
     #改变窗口图标 2022年6月26日21:17:38
+    #改变窗口背景颜色 2022年6月26日21:41:10
+    #改变窗口背景图片 2022年6月26日21:41:27
