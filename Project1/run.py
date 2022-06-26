@@ -12,7 +12,7 @@ if __name__=="__main__":
 
     app=QtWidgets.QApplication(sys.argv)
     mainwindow=QtWidgets.QMainWindow()
-    ui=project1.Ui_MainWindow()
+    ui=project1.Ui_test()
 
 
     icon = QtGui.QIcon()  # 改变图标
@@ -25,11 +25,10 @@ if __name__=="__main__":
     # 另一种办法设置窗口背景图片、颜色
     palette = QtGui.QPalette()
     # palette.setColor(QtGui.QPalette.Background , Qt.red)
-    # palette.setBrush(QtGui.QPalette.Background,QBrush(QPixmap("./borderImage.jpg")))        #这样有时候会只显示图片的一部分
-    palette.setBrush(QtGui.QPalette.Background, QBrush(
-        QPixmap("./borderImage.jpg").scaled(mainwindow.size(), QtCore.Qt.IgnoreAspectRatio,QtCore.Qt.SmoothTransformation)))  # 图片缩放显示
+    palette.setBrush(QtGui.QPalette.Background,QBrush(QPixmap("./borderImage.jpg")))        #这样有时候会只显示图片的一部分
+    # palette.setBrush(QtGui.QPalette.Background, QBrush(
+    #     QPixmap("./borderImage.jpg").scaled(mainwindow.size(), QtCore.Qt.IgnoreAspectRatio,QtCore.Qt.SmoothTransformation)))  # 图片缩放显示
 
-    mainwindow.setPalette(palette)
     mainwindow.setPalette(palette)
     ui.setupUi(mainwindow)
     mainwindow.show()

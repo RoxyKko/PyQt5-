@@ -17,6 +17,9 @@
    <iconset>
     <normaloff>7F263D99B929E0B4D25F25B314F1EC0F.jpg</normaloff>7F263D99B929E0B4D25F25B314F1EC0F.jpg</iconset>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
@@ -62,6 +65,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
  <connections/>
 </ui>

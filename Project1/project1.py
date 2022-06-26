@@ -9,51 +9,47 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QDesktopWidget          #导入屏幕类
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QBrush,QPixmap
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        MainWindow.setObjectName("Test")
-        screen=QDesktopWidget().screenGeometry()    #获取屏幕大小
-        screen_width=screen.width()
-        screen_height=screen.height()
-        MainWindow.resize(1200, 900)
-        self.centralwidget = QtWidgets.QWidget(MainWindow)
+
+class Ui_test(object):
+    def setupUi(self, test):
+        test.setObjectName("test")
+        test.resize(800, 600)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("7F263D99B929E0B4D25F25B314F1EC0F.jpg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        test.setWindowIcon(icon)
+        test.setStyleSheet("")
+        self.centralwidget = QtWidgets.QWidget(test)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(270, 290, 181, 81))
         self.pushButton.setObjectName("pushButton")
-        MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        test.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(test)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
         self.menubar.setObjectName("menubar")
         self.menu = QtWidgets.QMenu(self.menubar)
         self.menu.setObjectName("menu")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        test.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(test)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
-        self.actionNew = QtWidgets.QAction(MainWindow)
+        test.setStatusBar(self.statusbar)
+        self.actionNew = QtWidgets.QAction(test)
         self.actionNew.setObjectName("actionNew")
-        self.actionLoad = QtWidgets.QAction(MainWindow)
+        self.actionLoad = QtWidgets.QAction(test)
         self.actionLoad.setObjectName("actionLoad")
         self.menu.addAction(self.actionNew)
         self.menu.addAction(self.actionLoad)
         self.menubar.addAction(self.menu.menuAction())
 
+        self.retranslateUi(test)
+        QtCore.QMetaObject.connectSlotsByName(test)
 
-
-        self.retranslateUi(MainWindow)
-        QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-    def retranslateUi(self, MainWindow):
+    def retranslateUi(self, test):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow","标题栏"))
-        self.pushButton.setText(_translate("MainWindow", "PushButton"))
-        self.menu.setTitle(_translate("MainWindow", "菜单"))
-        self.actionNew.setText(_translate("MainWindow", "New"))
-        self.actionLoad.setText(_translate("MainWindow", "Load"))
-
-
+        test.setWindowTitle(_translate("test", "114514"))
+        self.pushButton.setText(_translate("test", "PushButton"))
+        self.menu.setTitle(_translate("test", "菜单"))
+        self.actionNew.setText(_translate("test", "New"))
+        self.actionLoad.setText(_translate("test", "Load"))
+import img_rc
