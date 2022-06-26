@@ -26,7 +26,7 @@ if __name__=="__main__":
     palette = QtGui.QPalette()
     # palette.setColor(QtGui.QPalette.Background , Qt.red)
     # palette.setBrush(QtGui.QPalette.Background,QBrush(QPixmap("./borderImage.jpg")))        #这样有时候会只显示图片的一部分
-    palette.setBrush(QtGui.QPalette.Background, QBrush(QPixmap("./1.jpg").scaled(mainwindow.size(),QtCore.Qt.IgnoreAspectRatio,QtCore.Qt.SmoothTransformation)))  # 图片缩放显示
+    palette.setBrush(mainwindow.backgroundRole(), QBrush(QPixmap("./1.jpg").scaled(1200,900,QtCore.Qt.IgnoreAspectRatio,QtCore.Qt.SmoothTransformation)))  # 图片缩放显示
 
     mainwindow.setPalette(palette)
     ui.setupUi(mainwindow)
