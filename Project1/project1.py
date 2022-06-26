@@ -46,6 +46,7 @@ class Ui_MainWindow(object):
         icon.addPixmap(QtGui.QPixmap(r"7F263D99B929E0B4D25F25B314F1EC0F.jpg"),
                        QtGui.QIcon.Normal, QtGui.QIcon.Off)         #放在同级目录可以这样简写
         mainwindow.setWindowIcon(icon)
+        mainwindow.setStyleSheet("#Test{background-color:blue}")        #指定为背景图片，#Test：#号后跟想要设置的窗口ObjectName即窗口对象名称
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
