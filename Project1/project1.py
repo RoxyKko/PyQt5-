@@ -62,7 +62,7 @@ class Ui_test(object):
         # palette.setBrush(mainwindow.backgroundRole(), QBrush(QPixmap("./borderImage.jpg")
         #     .scaled(mainwindow.size(),Qt.IgnoreAspectRatio,Qt.SmoothTransformation)))  # 图片缩放显示
         # mainwindow.setPalette(palette)
-        self.retranslateUi(test)
+        # self.retranslateUi(test)
         QtCore.QMetaObject.connectSlotsByName(test)
 
     def retranslateUi(self, test):
@@ -80,7 +80,6 @@ if __name__=="__main__":
     app=QtWidgets.QApplication(sys.argv)
     mainwindow=QtWidgets.QMainWindow()
     ui=Ui_test()
-
     ui.setupUi(mainwindow)
     mainwindow.show()
     sys.exit(app.exec_())
