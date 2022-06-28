@@ -18,11 +18,17 @@ if __name__=="__main__":
 
     mainwindow.setWindowFlags(Qt.WindowCloseButtonHint)#设置窗口样式,只显示关闭按键
 
+    ui.pushButton.clicked.connect(ui.showinfo)
+
     mainwindow.show()
     sys.exit(app.exec_())
+
+# def showinfo(self):
+#     print("自定义槽函数")
 
     #设置窗口透明度2022年6月28日13:32:39
     #复习控制窗口大小、设置窗口图标、背景2022年6月28日13:41:22
     #学会了把生成程序与启动程序分开，以后重新生成不会覆盖设置了，需要把需要的更改放在setupUI函数后面，这样写的代码才会生效 2022年6月28日13:48:19
     #设置窗口样式 2022年6月28日13:57:42
     #学习使用信号与槽，连接内置的槽函数 2022年6月28日14:10:08
+    #连接自定义函数，初始使用信号与槽 2022年6月28日14:31:34
