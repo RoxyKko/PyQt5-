@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(800, 1000)
         MainWindow.setWindowOpacity(0.5)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -29,6 +29,13 @@ class Ui_MainWindow(object):
         MainWindow.setWindowOpacity(1)              #设置窗口透明度
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        icon=QtGui.QIcon()#改变图标
+        icon.addPixmap(QtGui.QPixmap(r"3_1.jpg"),QtGui.QIcon.Normal,QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+
+        MainWindow.setStyleSheet("#MainWindow{border-image:url(2.jpg)}")
+
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -44,3 +51,4 @@ if __name__=="__main__":
     sys.exit(app.exec_())
 
     #设置窗口透明度2022年6月28日13:32:39
+    #复习控制窗口大小、设置窗口图标、背景2022年6月28日13:41:22
