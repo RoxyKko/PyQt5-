@@ -9,9 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
 
-
-class Ui_MainWindow(object):
+class Ui_MainWindow(QMainWindow):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(496, 329)
@@ -32,3 +32,10 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "主窗口"))
+
+    def open(self):
+        import demo3,demo2
+        self.child1=demo2.Ui_child1()
+        self.child2=demo3.Ui_child2()
+        self.child1.show()
+        self.child2.show()

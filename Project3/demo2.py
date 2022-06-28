@@ -9,9 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
 
-
-class Ui_child1(object):
+class Ui_child1(QMainWindow):
     def setupUi(self, child1):
         child1.setObjectName("child1")
         child1.resize(333, 160)

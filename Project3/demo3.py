@@ -9,9 +9,9 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
 
-
-class Ui_child2(object):
+class Ui_child2(QMainWindow):
     def setupUi(self, child2):
         child2.setObjectName("child2")
         child2.resize(390, 110)
@@ -32,3 +32,4 @@ class Ui_child2(object):
     def retranslateUi(self, child2):
         _translate = QtCore.QCoreApplication.translate
         child2.setWindowTitle(_translate("child2", "子窗口2"))
+
