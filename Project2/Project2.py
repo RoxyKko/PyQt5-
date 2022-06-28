@@ -18,6 +18,9 @@ class Ui_MainWindow(object):
         MainWindow.setWindowOpacity(0.5)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(325, 470, 150, 60))
+        self.pushButton.setObjectName("pushButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
@@ -26,30 +29,12 @@ class Ui_MainWindow(object):
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        # MainWindow.setWindowOpacity(1)              #设置窗口透明度
+
         self.retranslateUi(MainWindow)
+        self.pushButton.clicked.connect(MainWindow.close) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-
-        # icon=QtGui.QIcon()#改变图标
-        # icon.addPixmap(QtGui.QPixmap(r"3_1.jpg"),QtGui.QIcon.Normal,QtGui.QIcon.Off)
-        # MainWindow.setWindowIcon(icon)
-        #
-        # MainWindow.setStyleSheet("#MainWindow{border-image:url(2.jpg)}")
-
-
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-
-# if __name__=="__main__":
-#     import sys
-#     app=QtWidgets.QApplication(sys.argv)
-#     mainwindow=QtWidgets.QMainWindow()
-#     ui=Ui_MainWindow()
-#     ui.setupUi(mainwindow)
-#     mainwindow.show()
-#     sys.exit(app.exec_())
-#
-#     #设置窗口透明度2022年6月28日13:32:39
-#     #复习控制窗口大小、设置窗口图标、背景2022年6月28日13:41:22
+        self.pushButton.setText(_translate("MainWindow", "关闭"))
