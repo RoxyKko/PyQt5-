@@ -18,7 +18,7 @@ if __name__=="__main__":
 
     mainwindow.setWindowFlags(Qt.WindowCloseButtonHint)#设置窗口样式,只显示关闭按键
 
-    ui.pushButton.clicked.connect(ui.showinfo)
+    ui.pushButton.clicked.connect(ui.showinfo)#按钮连接自定义函数showinfo
 
     mainwindow.show()
     sys.exit(app.exec_())
