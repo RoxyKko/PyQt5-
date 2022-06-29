@@ -27,7 +27,9 @@ if __name__=="__main__":
     ui.label.setAlignment(Qt.AlignLeft|Qt.AlignVCenter)#水平左对齐，垂直右对齐
     ui.label.setWordWrap(True)#换行显示
 
-    ui.label.setPixmap(QPixmap("48319254.jpg"))#设置label显示图片
+    # ui.label.setPixmap(QPixmap("48319254.jpg"))#设置label显示图片
+
+    print(ui.label.text())
 
     mainwindow.show()
     sys.exit(app.exec_())
@@ -38,3 +40,4 @@ if __name__=="__main__":
     #label标签位置大小、换行设置   2022年6月29日15:38:04
     #设置label标签超链接           2022年6月29日15:41:52
     #设置label标签显示图片          2022年6月29日15:46:10
+    #获取label标签文本                2022年6月29日15:47:17

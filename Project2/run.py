@@ -20,6 +20,8 @@ if __name__=="__main__":
 
     ui.pushButton.clicked.connect(ui.showinfo)#按钮连接自定义函数showinfo
 
+
+
     mainwindow.show()
     sys.exit(app.exec_())
 
